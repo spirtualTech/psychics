@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiating Energy Ball</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .nav-link {
+            margin: 5px 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffd700;
+        }
+
+        .energy-ball {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(173, 216, 230, 1) 0%, rgba(0, 212, 255, 0) 70%);
+            box-shadow: 0 0 60px rgba(173, 216, 230, 0.8);
+            animation: pulse 2s infinite;
+            margin: 50px auto 20px auto;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(173, 216, 230, 0.8);
+            }
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 60px rgba(173, 216, 230, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(173, 216, 230, 0.8);
+            }
+        }
+
+        .text {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffd700;
+            font-weight: bold;
+            text-align: center;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700;
+            }
+            50% {
+                text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 25px #ffd700, 0 0 30px #ffd700;
+            }
+        }
+
+        .spirituality-line {
+            font-style: italic;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #fff;
+            margin-top: auto;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .energy-ball {
+                width: 200px;
+                height: 200px;
+            }
+
+            .text {
+                font-size: 20px;
+            }
+
+            .spirituality-line {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 14px;
+            }
+
+            .energy-ball {
+                width: 150px;
+                height: 150px;
+            }
+
+            .text {
+                font-size: 18px;
+            }
+
+            .spirituality-line {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="telekinesis.html" class="nav-link">Telekinesis</a>
+        <a href="#" class="nav-link">Clairvoyance</a>
+        <a href="#" class="nav-link">Telepathy</a>
+        <a href="#" class="nav-link">Precognition</a>
+        <a href="#" class="nav-link">Psychokinesis</a>
+        <a href="#" class="nav-link">Aura Reading</a>
+    </nav>
+    <div class="text">SpiritualTeach</div>
+    <div class="spirituality-line">Awaken the mystical synergy of psychic powers and spirituality.</div>
+    <div class="energy-ball"></div>
+    <div class="copyright">&copy; 2024 SpiritualTech. All rights reserved.</div>
+</body>
+</html>
