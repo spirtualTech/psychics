@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiating Energy Ball</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            font-family: Arial, sans-serif; /* Font family */
+            color: #fff; /* Text color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Navbar background color */
+            padding: 10px 0;
+            margin-bottom: 20px; /* Added margin to space it from the container */
+        }
+
+        .nav-link {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff; /* Text color */
+            font-size: 16px; /* Font size */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffd700; /* Hover color */
+        }
+
+        .energy-ball {
+            width: 300px; /* Increased size */
+            height: 300px; /* Increased size */
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(173, 216, 230, 1) 0%, rgba(0, 212, 255, 0) 70%);
+            box-shadow: 0 0 60px rgba(173, 216, 230, 0.8); /* Brighter glow */
+            animation: pulse 2s infinite, rotateBall 10s linear infinite;
+            margin-top: 100px; /* Adjust top margin */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(173, 216, 230, 0.8); /* Brighter glow */
+            }
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 60px rgba(173, 216, 230, 1); /* Brighter glow */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(173, 216, 230, 0.8); /* Brighter glow */
+            }
+        }
+
+        @keyframes rotateBall {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .text {
+            font-size: 24px; /* Font size */
+            margin-bottom: 20px; /* Margin between the lines */
+            color: #ffd700; /* Gold color */
+            font-weight: bold; /* Bold text */
+        }
+
+        .spirituality-line {
+            font-style: italic; /* Italic text */
+            font-size: 18px; /* Font size */
+            color: #fff; /* Text color */
+            overflow: hidden; /* Hide overflow to prevent line break */
+            white-space: nowrap; /* Prevent line break */
+            /* Removed animation */
+        }
+
+        .copyright {
+            font-size: 12px; /* Font size */
+            color: #fff; /* Text color */
+            margin-top: auto; /* Push to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="nav-link">Telekinesis</a>
+        <a href="#" class="nav-link">Clairvoyance</a>
+        <a href="#" class="nav-link">Telepathy</a>
+        <a href="#" class="nav-link">Precognition</a>
+        <a href="#" class="nav-link">Psychokinesis</a>
+        <a href="#" class="nav-link">Aura Reading</a>
+    </nav>
+    <div class="text">SpirtualTeach</div>
+    <div class="spirituality-line">Awaken the mystical synergy of psychic powers and spirituality.</div>
+    <div class="energy-ball"></div>
+    <div class="copyright">&copy; 2024 SpiritualTech. All rights reserved.</div>
+</body>
+</html>
