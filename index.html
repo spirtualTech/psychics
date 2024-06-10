@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual-Tech</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            color: #00ffff; /* Cyan color */
+        }
+
+        .message {
+            display: none; /* Hide by default */
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .navbar {
+            background-color: #333;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: #f9d71c;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .title {
+            font-size: 48px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00cccc, 0 0 40px #009999;
+            margin-bottom: 100px; /* Adjusted value to move the text further up */
+        }
+
+        .energy-ball {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 1) 0%, rgba(0, 204, 255, 0.8) 40%, rgba(0, 102, 255, 0.6) 60%, rgba(0, 0, 255, 0.4) 80%, rgba(0, 0, 0, 0) 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 204, 255, 0.4), 0 0 80px rgba(0, 102, 255, 0.3), 0 0 100px rgba(0, 0, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 204, 255, 0.4), 0 0 80px rgba(0, 102, 255, 0.3), 0 0 100px rgba(0, 0, 255, 0.2);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 60px rgba(0, 255, 255, 0.5), 0 0 80px rgba(0, 204, 255, 0.4), 0 0 100px rgba(0, 102, 255, 0.3), 0 0 120px rgba(0, 0, 255, 0.2);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 204, 255, 0.4), 0 0 80px rgba(0, 102, 255, 0.3), 0 0 100px rgba(0, 0, 255, 0.2);
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            background-color: black;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer a {
+            margin: 0 10px; /* Adjust the margin as needed */
+            width: 40px; /* Adjust the width of the icons */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="side"><a href="#geokinesis">Geokinesis</a></div>
+    <a href="#telekinesis" class="center">Telekinesis</a>
+    <div class="side"><a href="#chi">Chi</a><a href="#concentration-exercise">Concentration Exercise</a><a href="#do-and-dont">Do and Don't</a></div>
+</div>
+
+<div class="title">Spiritual-Tech</div>
+
+<div class="energy-ball"></div>
+
+<div class="message" id="message">
+    Sorry, we are not available on mobile devices. Switch to desktop for full experience. Team SpiritualTech
+</div>
+
+<footer>
+    <div style="display: flex; justify-content: center;">
+        <div>&copy; 2024 SpiritualTech. All rights reserved.</div>
+        <a href="https://www.instagram.com/spiritual.tech/" target="_blank"><img src="instagram(1).png" alt="Instagram" width="30"></a>
+        <a href="https://www.youtube.com/c/SpiritualTech" target="_blank"><img src="youtube.png" alt="YouTube" width="30"></a>
+    </div>
+</footer>
+
+<script>
+    // JavaScript logic to detect mobile devices
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById("message").style.display = "block";
+    } else {
+        document.getElementById("message").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
