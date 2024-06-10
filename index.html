@@ -15,7 +15,13 @@
             flex-direction: column;
             height: 100vh;
             overflow: hidden;
-            color: white;
+            color: #00ffff; /* Cyan color */
+        }
+
+        .message {
+            display: none; /* Hide by default */
+            margin-top: 20px;
+            font-size: 24px;
         }
 
         .navbar {
@@ -44,7 +50,6 @@
         }
 
         .title {
-            color: #00ffff; /* Cyan color */
             font-size: 48px;
             text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00cccc, 0 0 40px #009999;
             margin-bottom: 100px; /* Adjusted value to move the text further up */
@@ -83,15 +88,11 @@
             text-align: center;
             padding: 10px 0;
         }
-        
+
         footer a {
             margin: 0 10px; /* Adjust the margin as needed */
             width: 40px; /* Adjust the width of the icons */
             height: auto; /* Maintain aspect ratio */
-        }
-
-        #mobile-message {
-            display: none;
         }
     </style>
 </head>
@@ -107,7 +108,9 @@
 
 <div class="energy-ball"></div>
 
-<div id="mobile-message">Sorry, we are not available on mobile devices. Switch to desktop for full experience. Team SpirtualTech</div>
+<div class="message" id="message">
+    Sorry, we are not available on mobile devices. Switch to desktop for full experience. Team SpiritualTech
+</div>
 
 <footer>
     <div style="display: flex; justify-content: center;">
@@ -118,10 +121,11 @@
 </footer>
 
 <script>
-    // Check if the device is mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-        document.getElementById('mobile-message').style.display = 'block';
+    // JavaScript logic to detect mobile devices
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.getElementById("message").style.display = "block";
+    } else {
+        document.getElementById("message").style.display = "none";
     }
 </script>
 
