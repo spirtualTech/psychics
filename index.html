@@ -121,13 +121,12 @@
 </footer>
 
 <script>
-    // JavaScript logic to detect mobile devices
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        document.getElementById("message").style.display = "block";
-    } else {
-        document.getElementById("message").style.display = "none";
+    // JavaScript to detect mobile devices
+    if (/Mobi/.test(navigator.userAgent)) {
+        document.body.innerHTML = '<div style="text-align: center; color: white; font-size: 24px; padding: 20px;">Sorry, we are not available on mobile for now. Only desktop. - Team SpiritualTech</div>';
     }
 </script>
+
 
 </body>
 </html>
