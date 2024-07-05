@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles Background with Typewriter Heading</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: auto; /* Enable scrolling */
+        }
+        .text-container {
+            position: absolute;
+            top: 20%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            text-align: center;
+        }
+        .text-content {
+            position: absolute;
+            top: 40%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            text-align: center;
+            max-width: 80%;
+            margin-top: 60px;
+            overflow-y: auto;
+            font-size: 1.5rem;
+            color: transparent;
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h1 {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange; 
+            animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container" data-no-particles>
+        <h1>Meditation</h1>
+    </div>
+    <div class="text-content" data-no-particles>
+        The Core of Every Psychic Ability that exists in the world is <br><br><strong>"Meditation"</strong><br><br>
+        In this article I will explain the methods and the daily life exercises for learning to do Meditation.<br><br>
+        First of all If You have a mindset that Meditation is used to stop the mind from thinking,Your mindset is wrong. <br>
+        The more focus and energy You put in stopping Your thoughts and shutting your mind the more thoughts will come. <br>
+        <br>
+        Instead of focusing on thoughts, focus on things that are in continous motion <br><br>
+        <strong>The below discussed steps can help you learn Meditation. </strong><br><br>
+        <strong>[+]Environment </strong><br><br>
+        You see Meditation requires all your energy to be focused on one thing,that is the reason why Environment matters here. <br>
+        Try to find silent place like a garden or seashore. <br>
+        When You get good at silent places You can move to any place that You like but in start You have to with silent places <br><br>
+        <strong>[+]Time</strong><br><br>
+        Meditation doesn't requires You to be Punctual of time, You can do it anytime when Your mind is stress free. <br><br>
+        <strong>[+]meditation Music </strong><br><br>  
+        No Dont try it, You have to do meditation without any relaxing music or anything,You will train better. <br><br>
+        <strong>[+]method 1</strong><br><br>
+        When You begin to do meditation just focus the conciousness on your belly which is in continous motion <br>
+        look at its expansion and contraction with mind's eye <br><br>
+        <strong>[+] method 2</strong><br><br>
+        In this method You have to walk and focus the awarness on your feets and legs this method is great for begginers who find it tough to <br>
+        focus on breath or heartbeat <br><br>
+        <strong>[+] method 3</strong><br><br>
+        This method is very simple just you have to do is lay down or sit down and just focus on your breath <br>
+        You can either count your breaths or just look at them its up to you <br>
+        You can also concentrate on the top of your nose <br><br>
+        <strong>Tips:</strong><br><br>
+        Remember meditation cannot happen in just eye blink so You have to be patienced and keep trying again and again. <br><br>
+        Try to be in such Environment where no one can disturb you because in deep meditation disturbance can cause anger or even headache. <br>
+        No need to have a track of time , get rid of everything <br><br>
+        You need to lose conciousness slowly and slowly about everything like your body,your Environment, where you are sitting like about everything this step is very important. <br><br>
+        Lastly Remember thoughts will come and will  make you unstable ,Remember you are going to suffer in this journey the only thing  you need to do is accept that suffering and trust the process, no matter what just dont give up it is a slow process and giving up will not speed it up <br><br>
+        Remember attain and maintain........  
+
+       
+    </div>
+    <canvas id="particleCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particlesArray = [];
+        const numberOfParticles = 100;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+
+            isInsideProtectedDiv() {
+                const protectedDivs = document.querySelectorAll('[data-no-particles]');
+                for (let div of protectedDivs) {
+                    const rect = div.getBoundingClientRect();
+                    if (this.x >= rect.left && this.x <= rect.right &&
+                        this.y >= rect.top && this.y <= rect.bottom) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            draw() {
+                if (!this.isInsideProtectedDiv()) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+
+            update() {
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray.length = 0;
+            for (let i = 0; i < numberOfParticles; i++) {
+                const size = (Math.random() * 5) + 1;
+                const x = (Math.random() * (innerWidth - size * 2)) + size;
+                const y = (Math.random() * (innerHeight - size * 2)) + size;
+                const directionX = (Math.random() * 0.2) - 0.1;
+                const directionY = (Math.random() * 0.2) - 0.1;
+                const color = 'white';
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            init();
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
